@@ -14,7 +14,7 @@ function secondGreatLow (numArray) {
 	numArray = numArray.reduce(function(a,b){
     if (a.slice(-1)[0] !== b) 
     	a.push(b); 
-    return a;
+    	return a;
   	},[]); 
     //make sure the data makes sense
     if (numArray.length<=2){
@@ -41,13 +41,20 @@ function timeConvert (number) {
 	
 	return ({[hours]:number});
 }
-
+console.log(++x,"-----------------");
 console.log(timeConvert(68));
 
+/*Write a function bracketMatcher that takes a single string parameter and returns true if the brackets are correctly matched and each one is accounted for. Otherwise return false. For example: if str is "(hello (world))", then the output should be true, but if str is "((hello (world))" the the output should be false because the brackets do not correctly match up. "(()())" should return true. Only "(" and ")" will be used as brackets. If str contains no brackets return true. */
 
-
-
-
-
-
-
+function bracketMatcher (myString) {
+	//remove all except the ( and ) characters while comparing the lengths of the resulting strings
+	if (myString.length != 0)
+		return (myString.match(/[^(]/g).length==myString.match(/[^)]/g).length);
+	else
+		return false;
+}
+console.log(++x,"-----------------");
+console.log(bracketMatcher ("((hello world)))"));
+console.log(bracketMatcher ("(((hello world)))"));
+console.log(bracketMatcher (""));
+console.log(bracketMatcher ("no brackets here"));
