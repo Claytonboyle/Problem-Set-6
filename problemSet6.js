@@ -20,6 +20,7 @@ function secondGreatLow (numArray) {
     if (numArray.length<=2){
     	return ("Not enough numbers or value spread in intial array.")
     }
+    //return the second lowest and second highest, since we've sorted the array and removed dupes, and made sure length>=3
     return([numArray[1],numArray[(numArray.length)-2]]);
 }
 
